@@ -151,14 +151,28 @@ nav ul li a:hover {
     font-family: Khand-Bold;
 }
 
-.form-container {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+* {
+    box-sizing: border-box;
 }
+
+.form-container {
+    padding: 1rem; /* Add padding for smaller screens */
+}
+
+form {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
 form label {
     display: block;
     margin-top: 1rem;
@@ -167,9 +181,20 @@ form label {
     font-weight: bold;
 }
 
+.form-container label { 
+    /* had problem with nav burger... */
+    position: static; /* Reset positioning */
+    right: auto; /* Reset right alignment */
+    top: auto; /* Reset top alignment */
+    width: auto; /* Reset width */
+    height: auto; /* Reset height */
+    z-index: auto; /* Reset z-index */
+}
+
 form input, form select {
     width: 100%;
-    padding: 0.5rem;
+    max-width: 100%; /* Prevents inputs from exceeding their container width */
+    padding: 1rem;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -183,6 +208,7 @@ form input:focus, form select:focus {
 
 form button {
     width: 100%;
+    max-width: 100%;
     padding: 0.75rem;
     margin-top: 1.5rem;
     font-size: 1rem;
@@ -195,7 +221,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #007a45;
+    background-color: var(--primary-color);
 }
 
 h1 {
@@ -265,5 +291,5 @@ footer {
 
 footer .footer-text {
     margin: 0; /* Remove default margins from paragraphs */
-    font-size: 1.25rem; /* Adjust font size if needed */
+    font-size: 1.25rem;
 }
