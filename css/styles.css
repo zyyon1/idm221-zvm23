@@ -1,0 +1,149 @@
+@font-face {
+    font-family: Khand-Bold; /* Name your font family */
+    src: url('fonts\Khand\Khand-Bold.ttf'); /* Locate the .ttf file within your directory*/
+}
+
+@font-face {
+    font-family: Hind; 
+    src: url('fonts\Hind\Hind-Regular.ttf');
+}
+
+html {
+    --primary-color: #00A05B;
+    --secondary-color: #ffffff;
+    --slate-400: #94a3b8;
+    --slate-700: #334155;
+
+    --header-height: 100px;
+
+    --nav-background-color: var(--slate-700);
+    --nav-a-hover-bg-color: var(--slate-400);
+}
+
+body {
+    font-family: Hind;
+    line-height: 1.6;
+    background-color: var(--secondary-color);
+    color: #333;
+}
+
+header {
+    background: var(--primary-color);
+    height: var(--header-height);
+    width: 100%;
+  
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+label {
+    cursor: pointer;
+    height: 20px;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 26px;
+    z-index: 1001;
+
+    span {
+      background-color: var(--secondary-color);
+      border-radius: 2px;
+      display: block;
+      height: 3px;
+      position: absolute;
+      width: 100%;
+
+      transform-origin: left;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2) {
+        top: 8px;
+      }
+
+      &:nth-child(3) {
+        top: 16px;
+      }
+    }
+}
+
+nav {
+    background: var(--primary-color);
+    height: 100vh;
+    margin-block-start: var(--nav-height);
+    width: 300px;
+  
+    position: fixed;
+    right: -300px;
+    top: 0;
+    z-index: 1000;
+  
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  
+      li {
+        padding: 0;
+  
+        a {
+          color: white;
+          display: block;
+          font-size: 1.25rem;
+          padding-block: 1rem;
+          padding-inline: 1rem;
+          text-decoration: none;
+  
+          &:hover {
+            background-color: var(--nav-a-hover-bg-color);
+            color: black;
+          }
+        }
+      }
+    }
+}
+
+/* Show nav when checkbox is checked */
+.nav-toggle:checked ~ nav {
+    right: 0;
+}
+  
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: rotate(45deg);
+    top: -2px; /* Fix */
+}
+  
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+}
+  
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.image-container img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    padding: 0; /* Remove padding for full coverage */
+}
+
+.intro {
+    padding: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    nav.nav a {
+        font-size: 1.2rem;
+    }
+}
