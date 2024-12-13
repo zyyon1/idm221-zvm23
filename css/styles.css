@@ -135,7 +135,7 @@ nav ul li a:hover {
     display: block;
 }
 
-.about {
+.subheader {
     font-family: Khand-Bold;
     text-align: center;
     padding: 0.5rem;
@@ -149,6 +149,53 @@ nav ul li a:hover {
 .awards {
     text-align: center;
     font-family: Khand-Bold;
+}
+
+.form-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+form label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: bold;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+form input:focus, form select:focus {
+    border-color: #00a05b;
+    box-shadow: 0 0 4px rgba(0, 160, 91, 0.3);
+}
+
+form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #00a05b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #007a45;
 }
 
 h1 {
